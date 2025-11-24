@@ -3,7 +3,83 @@
 <head>
     <title>AND</title>
 	<style>
-.button {
+.button {<!DOCTYPE html>
+<html>
+<head>
+    <title>AND</title>
+    <style>
+    .button {
+      background-color: #008CBA; /* Blue */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+
+<script>
+// JavaScript functions for toggling images
+function toggleImage() {
+    var image = document.getElementById("toggleImage");
+    if (image.src.match("off1.png")) {
+        image.src = "on1.png";
+    } else {
+        image.src = "off1.png";
+    }
+}
+
+function toggleImage2() {
+    var image = document.getElementById("toggleImage2");
+    if (image.src.match("off1.png")) {
+        image.src = "on1.png";
+    } else {
+        image.src = "off1.png";
+    }
+}
+
+function toggleInputOne() {
+    // Your logic for input one
+    console.log("Input One toggled");
+}
+
+function toggleInputTwo() {
+    // Your logic for input two
+    console.log("Input Two toggled");
+}
+
+function and() {
+    // Your AND gate logic here
+    console.log("AND function running");
+}
+</script>
+
+<button class="button" onclick="and()">Run</button>
+<p>
+
+<table style="width:100%">
+  <tr>
+    <td>
+        <img src="off1.png" id="toggleImage" onclick="toggleImage(); toggleInputOne();"/>
+        <br>
+        <img src="off1.png" id="toggleImage2" onclick="toggleImage2(); toggleInputTwo();"/> 
+    </td>
+    <td><img id="andGate" src="and2off.PNG"></td>
+  </tr>
+</table>
+
+<a href="course.html">Back to Home</a></h3>
+
+</p>
+
+</body>
+</html>
   background-color: #008CBA; /* Blue */
   border: none;
   color: white;
