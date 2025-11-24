@@ -20,20 +20,18 @@
         width: 256px;
         height: 256px;
     }
-    
-    .and-gate {
-        width: 256px; /* Optional: resize AND gate too if needed */
-        height: auto; /* Maintain aspect ratio */
-    }
     </style>
 </head>
 <body>
 
 <script>
-// JavaScript functions for toggling images
+// JavaScript functions for toggling images - FIXED VERSION
 function toggleImage() {
     var image = document.getElementById("toggleImage");
-    if (image.src.match("off1.png")) {
+    var currentSrc = image.src;
+    
+    // Check if src contains the filename (more reliable)
+    if (currentSrc.includes("off1.png")) {
         image.src = "on1.png";
     } else {
         image.src = "off1.png";
@@ -42,7 +40,10 @@ function toggleImage() {
 
 function toggleImage2() {
     var image = document.getElementById("toggleImage2");
-    if (image.src.match("off1.png")) {
+    var currentSrc = image.src;
+    
+    // Check if src contains the filename (more reliable)
+    if (currentSrc.includes("off1.png")) {
         image.src = "on1.png";
     } else {
         image.src = "off1.png";
@@ -75,7 +76,7 @@ function and() {
         <br>
         <img src="off1.png" id="toggleImage2" class="toggle-btn" onclick="toggleImage2(); toggleInputTwo();"/> 
     </td>
-    <td><img id="andGate" src="and2off.PNG" class="and-gate"></td>
+    <td><img id="andGate" src="and2off.PNG"></td>
   </tr>
 </table>
 
