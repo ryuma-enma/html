@@ -15,6 +15,16 @@
       margin: 4px 2px;
       cursor: pointer;
     }
+    
+    .toggle-btn {
+        width: 256px;
+        height: 256px;
+    }
+    
+    .and-gate {
+        width: 256px; /* Optional: resize AND gate too if needed */
+        height: auto; /* Maintain aspect ratio */
+    }
     </style>
 </head>
 <body>
@@ -61,11 +71,11 @@ function and() {
 <table style="width:100%">
   <tr>
     <td>
-        <img src="off1.png" id="toggleImage" onclick="toggleImage(); toggleInputOne();"/>
+        <img src="off1.png" id="toggleImage" class="toggle-btn" onclick="toggleImage(); toggleInputOne();"/>
         <br>
-        <img src="off1.png" id="toggleImage2" onclick="toggleImage2(); toggleInputTwo();"/> 
+        <img src="off1.png" id="toggleImage2" class="toggle-btn" onclick="toggleImage2(); toggleInputTwo();"/> 
     </td>
-    <td><img id="andGate" src="and2off.PNG"></td>
+    <td><img id="andGate" src="and2off.PNG" class="and-gate"></td>
   </tr>
 </table>
 
