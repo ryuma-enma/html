@@ -17,52 +17,61 @@
     }
     
     .toggle-btn {
-        width: 256px;
-        height: 256px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .and-gate {
+        width: 200px;
+        height: auto;
     }
     </style>
 </head>
 <body>
 
 <script>
-// JavaScript functions for toggling images - FIXED VERSION
+var inputOneIsOn = false; 
+var inputTwoIsOn = false;
+
 function toggleImage() {
-    var image = document.getElementById("toggleImage");
-    var currentSrc = image.src;
-    
-    // Check if src contains the filename (more reliable)
-    if (currentSrc.includes("off1.png")) {
-        image.src = "on1.png";
-    } else {
-        image.src = "off1.png";
-    }
+   var img1 = "off1.png";
+   var img2 = "on1.png";
+   
+   var imgElement = document.getElementById('toggleImage');
+   imgElement.src = (imgElement.src.includes(img1))? img2 : img1;
 }
 
 function toggleImage2() {
-    var image = document.getElementById("toggleImage2");
-    var currentSrc = image.src;
+   var img1 = "off1.png";
+   var img2 = "on1.png";
+   
+   var imgElement = document.getElementById('toggleImage2');
+   imgElement.src = (imgElement.src.includes(img1))? img2 : img1;
+}
+
+function toggleInputOne() { 
+    inputOneIsOn = !inputOneIsOn; 
+} 
+
+function toggleInputTwo() { 
+    inputTwoIsOn = !inputTwoIsOn; 
+} 
+
+function and(){
+    var a = inputOneIsOn;
+    var b = inputTwoIsOn;
     
-    // Check if src contains the filename (more reliable)
-    if (currentSrc.includes("off1.png")) {
-        image.src = "on1.png";
-    } else {
-        image.src = "off1.png";
-    }
-}
-
-function toggleInputOne() {
-    // Your logic for input one
-    console.log("Input One toggled");
-}
-
-function toggleInputTwo() {
-    // Your logic for input two
-    console.log("Input Two toggled");
-}
-
-function and() {
-    // Your AND gate logic here
-    console.log("AND function running");
+    console.log('Input one is on: ', inputOneIsOn); 
+    console.log('Input two is on: ', inputTwoIsOn); 
+    
+    if(inputOneIsOn && inputTwoIsOn)
+        document.getElementById('andGate').src='and2on.png';
+    else if (!inputOneIsOn && inputTwoIsOn) 
+        document.getElementById('andGate').src='andoffon.PNG';
+    else if (inputOneIsOn && !inputTwoIsOn) 
+        document.getElementById('andGate').src='andonoff.PNG';
+    else if (!inputOneIsOn && !inputTwoIsOn) 
+        document.getElementById('andGate').src='and2off.PNG';
 }
 </script>
 
@@ -76,7 +85,7 @@ function and() {
         <br>
         <img src="off1.png" id="toggleImage2" class="toggle-btn" onclick="toggleImage2(); toggleInputTwo();"/> 
     </td>
-    <td><img id="andGate" src="and2off.PNG"></td>
+    <td><img id="andGate" src="and2off.PNG" class="and-gate"></td>
   </tr>
 </table>
 
